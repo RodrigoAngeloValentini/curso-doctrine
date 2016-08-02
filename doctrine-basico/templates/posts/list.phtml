@@ -13,24 +13,25 @@
 <body>
     <div class="container">
         <div class="row">
-            <h3>Listagem de Categorias</h3>
-            <a href="/categories/create" class="btn btn-default">Nova Categoria</a>
+            <h3>Listagem de Posts</h3>
+            <a href="/posts/create" class="btn btn-default">Novo Post</a>
             <table class="table">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
+                        <th>Title</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($categories as $category):?>
+                    <?php foreach($posts as $post):?>
                     <tr>
-                        <td><?=$category->getId()?></td>
-                        <td><?=$category->getName()?></td>
+                        <td><?=$post->getId()?></td>
+                        <td><?=$post->getTitle()?></td>
                         <td>
-                            <a href="/categories/<?=$category->getId()?>/edit">Editar</a>|
-                            <a href="/categories/<?=$category->getId()?>/remove">Excluir</a>
+                            <a href="/posts/<?=$post->getId()?>/categories">Categories</a>|
+                            <a href="/posts/<?=$post->getId()?>/edit">Editar</a>|
+                            <a href="/posts/<?=$post->getId()?>/remove">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach;?>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Doctrine</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <h3>Editar Categoria</h3>
+        <form action="<?="/posts/{$post->getId()}"?>/update" name="form" method="post">
+            <div class="form-group">
+                <label for="title">Name</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="<?=$post->getTitle()?>">
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea name="content" id="content" cols="30" rows="10" class="form-control"><?=$post->getContent()?></textarea>
+            </div>
+            <button class="btn btn-default" type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
